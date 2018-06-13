@@ -15,7 +15,7 @@ ENV WALLET_URL=https://github.com/avymantech/lobstex/releases/download/v2.0/linu
 RUN wget $WALLET_URL -O /tmp/wallet.zip \
 	&& unzip /tmp/wallet.zip -d /usr/local/bin \
 	&& chmod +x /usr/local/bin/lobstex* \
-	&& mkdir -p /data/.papelcore
+	&& mkdir -p /data/.lobstex
 
 #rpc port & main port
 EXPOSE 15156 14146
