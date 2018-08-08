@@ -1,26 +1,35 @@
 #!/bin/bash
-echo "Docker LOBS wallet
 
-By: Jos Hendriks
-GitHub: https://github.com/joshendriks/
-Docker: https://hub.docker.com/r/joshendriks/ 
+configfile=$1
+ticker=$2
+walletdaemon=$3
 
-BTC: 1NCZgpMMoNwL6ZeFsEQ2kRZEzzzTd5TuGk
-LOBS: LfVjj2bo7Lxm8zKmyV6asdjeGu5s35pJhk"
+datadir=/data/wallet
+configdir="/config"
+walletfile="wallet.dat"
+echo "Docker $ticker wallet
 
-config="/config/lobstex.conf"
-if [ -f "$config" ]
-then
-    echo "Using $config"
-    cp $config /data/.lobstex/lobstex.conf
-fi
+By: ChainMapper
+Website: https://chainmapper.com"
 
-wallet="/config/wallet.dat"
+mkdir -p $datadir
+
+wallet="$configdir/$walletfile"
 if [ -f "$wallet" ]
 then
     echo "Using $wallet"
-    cp $wallet /data/.lobstex/wallet.dat
+    cp $wallet $datadir/$walletfile
 fi
 
-echo "Starting LOBS daemon..."
-lobstexd
+config="$configdir/$configfile"
+if [ -f "$config" ]
+then
+    echo "Using $config"
+    cp $config $datadir/$configfile
+else
+    touch $datadir/$configfile
+    /gen_config.sh > $datadir/$configfile
+fi
+
+echo "Starting $ticker daemon..."
+$walletdaemon -datadir=$datadir
