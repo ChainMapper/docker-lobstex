@@ -1,6 +1,6 @@
 FROM chainmapper/walletbase-xenial
 	
-ENV WALLET_URL=https://github.com/avymantech/lobstex/releases/download/v2.1.1/linux.zip
+ENV WALLET_URL=https://github.com/avymantech/lobstex/releases/download/v2.3/Lobstex.Linux.v2.3.zip
 
 RUN wget $WALLET_URL -O /tmp/wallet.zip \
 	&& unzip /tmp/wallet.zip -d /usr/local/bin \
