@@ -1,4 +1,4 @@
-FROM chainmapper/walletbase-xenial
+FROM chainmapper/walletbase-bionic
 	
 ENV WALLET_URL=https://github.com/avymantech/lobstex/releases/download/v2.3/Lobstex.Linux.v2.3.zip
 
