@@ -1,6 +1,6 @@
 FROM chainmapper/walletbase-bionic
 	
-ENV WALLET_URL=https://github.com/avymantech/lobstex/releases/download/2.3.1/Lobstex.Linux.2.3.1.zip
+ENV WALLET_URL=https://github.com/avymantech/lobstex/releases/download/v2.4.0/Lobstex-2.4.0-aarch64-linux-gnu.zip
 
 RUN wget $WALLET_URL -O /tmp/wallet.zip \
 	&& unzip /tmp/wallet.zip -d /usr/local/bin \
