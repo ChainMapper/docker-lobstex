@@ -1,10 +1,10 @@
 FROM chainmapper/walletbase-bionic
 	
-ENV WALLET_URL=https://github.com/avymantech/lobstex/releases/download/v2.4.0/Lobstex-2.4.0-aarch64-linux-gnu.zip
+ENV WALLET_URL=https://github.com/avymantech/lobstex/releases/download/v2.4.0/lobstex-2.4.0-linux64.tar.gz
 
-RUN wget $WALLET_URL -O /tmp/wallet.zip \
-	&& unzip /tmp/wallet.zip -d /usr/local/bin \
-	&& chmod +x /usr/local/bin/*
+RUN wget $WALLET_URL -O /tmp/wallet.tar.gz \
+	&& cd /usr/local/bin \
+	&& tar zxvf /tmp/wallet.tar.gz
 
 #rpc port & main port & zmqport
 EXPOSE 6666 14146 5555

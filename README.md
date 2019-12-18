@@ -2,7 +2,7 @@
 Wallet and daemon for Lobstex [LOBS] cryptocurrency on docker
 
 # Quickstart
-Type `docker run -it -e "USER=me" -e "PASSWORD=secret" -e "RPCALLOW=127.0.0.1" chainmapper/lobstex` and see the wallet starting.
+Type `docker run -it -e "USER=secrettop" -e "PASSWORD=topsecret" -e "RPCALLOW=127.0.0.1" chainmapper/lobstex` and see the wallet starting.
 
 Alternatively type `docker run -it -v "<path_to_config>:/config/lobstex.conf" chainmapper/lobstex` to use your own config.
 
